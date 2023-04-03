@@ -27,7 +27,8 @@ class CategoryController extends Controller {
      * Показывает форму для создания категории
      */
     public function create() {
-        return view('admin.category.create');
+        $items = Category::all();
+        return view('admin.category.create', compact('items'));
     }
 
     /**
@@ -44,7 +45,8 @@ class CategoryController extends Controller {
      * Показывает форму для редактирования категории
      */
     public function edit(Category $category) {
-        return view('admin.category.edit', compact('category'));
+        $items = Category::all();
+        return view('admin.category.edit', compact('category', 'items'));
     }
 
     /**

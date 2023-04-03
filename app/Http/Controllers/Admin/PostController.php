@@ -55,8 +55,9 @@ class PostController extends Controller {
      * Показывает форму редактирования поста
      */
     public function edit(Post $post) {
+        $items = Category::all();
         session()->keep('preview');
-        return view('admin.post.edit', compact('post' ));
+        return view('admin.post.edit', compact('post','items' ));
     }
 
     /**
